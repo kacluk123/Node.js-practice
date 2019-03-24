@@ -1,11 +1,8 @@
 const http = require('http');
 
-function rqListener(req, res) {
-    console.log(req)
-    console.log('elo')
-};
+const routes = require('./routes')
 
-const myServer = http.createServer(rqListener);
+const myServer = http.createServer(routes);
 
 myServer.listen(3000);
 

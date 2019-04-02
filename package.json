@@ -1,28 +1,20 @@
 {
-  "name": "node-js",
+  "name": "nodejs-complete-guide",
   "version": "1.0.0",
-  "description": "",
-  "main": "node.js",
+  "description": "Complete Node.js Guide",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
     "start-server": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kacluk123/Node.js-practice.git"
-  },
-  "author": "",
+  "author": "Maximilian Schwarzmüller",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kacluk123/Node.js-practice/issues"
-  },
-  "homepage": "https://github.com/kacluk123/Node.js-practice#readme",
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.3"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.16.3"
   }
 }

@@ -1,48 +1,16 @@
-document.addEventListener('DOMContentLoaded', ()=>{
-//     const button = document.querySelector('#btn');
+const backdrop = document.querySelector('.backdrop');
+const sideDrawer = document.querySelector('.mobile-nav');
+const menuToggle = document.querySelector('#side-menu-toggle');
 
-    
-    getDevices = async (url, bod) => {
-        const settings = {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(bod)
-        };
-        const data = await fetch(url, settings)
-        return data;
+function backdropClickHandler() {
+  backdrop.style.display = 'none';
+  sideDrawer.classList.remove('open');
 }
-    
-    
-    
-    
-    
-    
-    
-    
-//     if(button){
-//         button.addEventListener('click', ()=>{
-//             getDevices()
-//         })
-//     }
 
+function menuToggleClickHandler() {
+  backdrop.style.display = 'block';
+  sideDrawer.classList.add('open');
+}
 
-
-
-    function getProductId(){
-        const cards = document.querySelectorAll('.delete-card');
-       console.log(cards)
-        cards.forEach((node)=>{
-            node.addEventListener('click', _ => {
-                getDevices("http://localhost:3002/", {id: node.dataset.id})
-            })
-        })
-        }
-
-
-
-getProductId()
-
-})
+backdrop.addEventListener('click', backdropClickHandler);
+menuToggle.addEventListener('click', menuToggleClickHandler);

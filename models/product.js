@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const uuid = require('uuid');
 
 const p = path.join(
   path.dirname(process.mainModule.filename),
@@ -19,9 +18,11 @@ const getProductsFromFile = cb => {
 };
 
 module.exports = class Product {
-  constructor(t) {
-    this.title = t;
-    this.id = uuid();
+  constructor(title, imageUrl, description, price) {
+    this.title = title;
+    this.imageUrl = imageUrl;
+    this.description = description;
+    this.price = price;
   }
 
   save() {
@@ -35,14 +36,5 @@ module.exports = class Product {
 
   static fetchAll(cb) {
     getProductsFromFile(cb);
-  }
-
-  static deleteItemFromJsonFile(id){
-    getProductsFromFile(products => {
-      const newArrayOfProducts = products.filter(item => item.id !== id)
-      fs.writeFile(p, JSON.stringify(newArrayOfProducts), err => {
-        console.log(err);
-      });
-    })
   }
 };
